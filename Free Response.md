@@ -19,13 +19,22 @@ Selection
 Iteration
 
 
-
 ### Question 1
 Programs accept input to achieve their intended functionality. **Describe at least one valid input to your program and what your program does with that input.**
 
 - Write your responses to this question only on the designated pages in the separate Written Response booklet.
 - If there are multiple parts to this question, write the part letter with your response.
-
+```Js
+function addToDo(event) {
+  DOMSelectors.toDoList.innerHTML = "";
+  const inputtedToDo = DOMSelectors.userInput.value;
+  event.preventDefault();
+  ToDoItems.push(inputtedToDo);
+  displayToDoList(ToDoItems);
+  DOMSelectors.userInput.value = "";
+}
+```
+The function accepts an input from the user which clears the current items in the html and adds whatever is inputted and resets the input bar to blank again.
 ---
 
 ### Question 2

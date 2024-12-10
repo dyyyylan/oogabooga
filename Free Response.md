@@ -25,16 +25,21 @@ Programs accept input to achieve their intended functionality. **Describe at lea
 - Write your responses to this question only on the designated pages in the separate Written Response booklet.
 - If there are multiple parts to this question, write the part letter with your response.
 ```Js
-function addToDo(event) {
-  DOMSelectors.toDoList.innerHTML = "";
-  const inputtedToDo = DOMSelectors.userInput.value;
-  event.preventDefault();
-  ToDoItems.push(inputtedToDo);
-  displayToDoList(ToDoItems);
-  DOMSelectors.userInput.value = "";
-}
+  function removeToDo() {
+    const specificCard = this.parentElement;
+    const specificCardText =
+      specificCard.querySelector(".to-do-card").textContent;
+
+    for (let i = 0; i < ToDoItems.length; i++) {
+      if (ToDoItems[i] === specificCardText) {
+        ToDoItems.splice(i, 1);
+        break;
+      }
+    }
+    specificCard.remove();
+  }
 ```
-The function accepts an input from the user which clears the current items in the html and adds whatever is inputted and resets the input bar to blank again.
+
 ---
 
 ### Question 2
@@ -42,11 +47,17 @@ Refer to your Personalized Project Reference when answering this question.
 
 #### Part (a):
 Consider the first iteration statement included in the Procedure section of your Personalized Project Reference. **Describe what is being accomplished by the code in the body of the iteration statement.**
+```
+The function accepts an input from the user which clears the current items in the html and adds whatever is inputted and resets the input bar to blank again.
+```
 
 #### Part (b):
 Consider the procedure identified in part (i) of the Procedure section of your Personalized Project Reference.
 - Write two calls to your procedure that each cause a different code segment in the procedure to execute.
 - Describe the expected behavior of each call. If it is not possible for two calls to your procedure to cause different code segments to execute, explain why this is the case for your procedure.
+
+
+
 
 #### Part (c):
 Suppose another programmer provides you with a procedure called `checkValidity(value)` that:
